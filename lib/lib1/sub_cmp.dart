@@ -8,8 +8,6 @@ class SubCmp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     StockBloc bloc = context.watch<StockBloc>();
-    BlocProvider.of<StockBloc>(context);
-
     return Column(
       children: <Widget>[
         Text("Sub cmp + ${bloc.state.value}"),
@@ -17,7 +15,7 @@ class SubCmp extends StatelessWidget {
             onPressed: () {
               bloc.add(StockEvent());
             },
-            child: const Text("Ajouter 1"))
+            child: const Text("add"))
       ],
     );
   }
